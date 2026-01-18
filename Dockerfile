@@ -2,9 +2,11 @@ FROM docker.n8n.io/n8nio/n8n:latest
 
 USER root
 
-RUN apt-get update && apt-get install -y ffmpeg && rm -rf /var/lib/apt/lists/*
+RUN apt-get update \
+ && apt-get install -y ffmpeg \
+ && rm -rf /var/lib/apt/lists/*
 
-#npm packaages you wanted
+# npm packages you wanted
 RUN npm install -g axios music-metadata
 
 USER node
