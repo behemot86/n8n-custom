@@ -1,0 +1,9 @@
+PROM docker.n8n.io/n8n:latest
+USER root
+RUN apt-get update \
+	&& apt-get install -y --no-install-recommends ffmpeg \
+	&& rm -rf /var/lib/apt/lists/*
+RUN npm install -g\
+	axios \
+	music-metadata
+USER node
